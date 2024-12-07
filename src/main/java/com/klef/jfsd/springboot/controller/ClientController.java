@@ -19,7 +19,8 @@ public class ClientController {
 	@GetMapping("demo5")
 	public String demo5(@RequestParam("p") int x, @RequestParam("q") int y) {
 		int r = x + y;
-		return Integer.toString(r);
+		int q=x*y;
+		return Integer.toString(r,q);
 	}
 	
 	@GetMapping("display/{fname}/{lname}")
@@ -33,6 +34,14 @@ public class ClientController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("employee");
 		return mv;
+	}
+	
+
+	@GetMapping("displayname/{num1}/{lname}")
+	@ResponseBody
+	public String displayname(@PathVariable("num1") int a, @PathVariable("lname") String b) {
+		String c = a + " " + b;
+		return (c);
 	}
 	
 	
