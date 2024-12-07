@@ -16,11 +16,11 @@ public class ClientController {
 		return "Welcome to JFSD EndSemLab";
 	}
 	
-	@GetMapping("demo5")
-	public String demo5(@RequestParam("p") int x, @RequestParam("q") int y) {
+	@GetMapping("add")
+	public String demo1(@RequestParam("p") int x, @RequestParam("q") int y) {
 		int r = x + y;
-		int q=x*y;
-		return Integer.toString(r,q);
+		
+		return Integer.toString(r);
 	}
 	
 	@GetMapping("display/{fname}/{lname}")
@@ -42,6 +42,13 @@ public class ClientController {
 	public String displayname(@PathVariable("num1") int a, @PathVariable("lname") String b) {
 		String c = a + " " + b;
 		return (c);
+	}
+	
+	
+	@GetMapping("mul")
+	public String demo6(@RequestParam("p") int x, @RequestParam("q") int y) {
+		int r = x * y;
+		return Integer.toString(r);
 	}
 	
 	
